@@ -33,7 +33,7 @@ export default function TextForm(props) {
 
     return (
         <>
-        <div className='container'>
+        <div className='container' style={{color: props.mode==='dark'?'white':'black'}}>
             <h1>{props.heading}</h1>
             {/* <div className="mb-5"> */}
             {/* <label for="myBox" className="form-label">
@@ -46,7 +46,7 @@ export default function TextForm(props) {
                 Submit
             </button> */}
             <div className="mb-3">
-                <textarea className="form-control" value={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
+                <textarea className="form-control" style={{backgroundColor: props.mode==='dark'?'gray':'white'}} value={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
             </div>
             <div className="btn btn-primary" onClick={handleUpClick}>Change to UpperCase</div>
             <div className="btn btn-primary mx-2" onClick={handleLoClick}>Change to LowerCase</div>
@@ -56,7 +56,7 @@ export default function TextForm(props) {
 
 
         </div>
-        <div className="container" my-3>
+        <div className="container my-3" >
             <h2>Your text summary</h2>
             <p>{text.split(" ").length} words and {text.length} characters are written here.</p>
             <p>It will take average person {0.008 * text.split(" ").length} min to read these text</p>
